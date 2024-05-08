@@ -1,0 +1,39 @@
+﻿@model Models.Models.Publisher
+
+<h3>Edit</h3>
+
+<style>
+    .edit_button {
+        color: white;
+        background-color: blue;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .cancel_button {
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+</style>
+
+<form asp-action="Edit" asp-controller="Publisher" method="post">
+    <div>
+        <input type="hidden" asp-for="Publisher_Id" />
+    </div>
+
+    <div>
+        <lable asp-for="Name"> Name</lable>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <lable asp-for="Location"> Location</lable>
+        <input asp-for="Location" />
+    </div>
+    <button class="edit_button">Edit</button>
+    <button asp-action="Publisher_Index" asp-controller="Publisher">Cancel</button>
+</form>

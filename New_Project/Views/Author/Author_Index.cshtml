@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Models.Models.Author>
+
+<div class="pos">
+<h1>
+    Hi
+</h1>
+<a asp-action="Create" asp-controller="Author" class="add_button"> Create</a>
+
+</div>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 1000px;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    .pos{
+       display: flex;
+       text-align: center;
+    }
+
+   .edit_button{
+   color: white;
+   background-color: blue;
+   border-radius: 10px;
+    text-decoration: none;
+    padding: 5px;
+    
+   
+   }
+
+    .add_button {
+        color: white;
+        background-color: blue;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+        
+    }
+
+    .delete_button{
+        color: white;
+        background-color: red ;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>BirthDate</th>
+            <th>Location</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var num in Model)
+        {
+            <tr>
+                <td>@num.FirstName</td>
+                <td>@num.LastName</td>
+                <td>@num.BirthDate</td>
+                <td>@num.Location</td>
+                <td>
+                    <a class="edit_button" asp-action="Edit" asp-controller="Author" asp-route-Id="@num.AuthorId">Edit</a>
+
+                    <a class="delete_button" asp-controller="Author" asp-action="Delete" asp-route-Id="@num.AuthorId">Delete </a>
+                    
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

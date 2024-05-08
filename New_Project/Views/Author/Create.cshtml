@@ -1,0 +1,40 @@
+﻿@model Models.Models.Author
+<h2>Create</h2>
+
+<style>
+    .edit_button {
+        color: white;
+        background-color: blue;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+</style>
+
+<form method="post">
+   
+
+    <div>
+        <label asp-for="FirstName"> FirstName</label>
+        <input type="text" asp-for="FirstName" />
+    </div>
+
+    <div>
+        <label asp-for="LastName"> LastName</label>
+        <input type="text" asp-for="LastName" />
+    </div>
+
+    <div>
+        <label asp-for="BirthDate"> BirthDate</label>
+        <input type="date" asp-for="BirthDate" />
+    </div>
+
+    <div>
+        <label asp-for="Location"> Location</label>
+        <input type="text" asp-for="Location" />
+    </div>
+    <button class="edit_button" type="submit" >Create</button>
+    <a asp-action="Author_Index" asp-controller="Author" class="delete_button"> Cancel</a>
+
+
+</form>

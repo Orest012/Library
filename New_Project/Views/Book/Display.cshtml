@@ -1,0 +1,40 @@
+﻿@model Models.Models.BookAuthorVM
+
+<h3>Author</h3>
+
+    <ol>
+        <li><strong>Title</strong> - @Model.Book.Title</li>
+        <li><strong>ISBN</strong> - @Model.Book.ISBN</li>
+        <li><strong>Price</strong> - @Model.Book.Price</li>
+
+        @*  @if (Model.Author_Id != 0)
+        {
+        <li><strong>Author Id</strong> - @Model.Author_Id</li>
+
+        } *@
+        @* @foreach (var num in Model.BookAuthorMap)
+        {
+        <li><strong>FirstName</strong> - @num.Author.FirstName</li>
+        <li><strong>LastName</strong> -  @num.Author.LastName</li>
+        <li><strong>BirthDate</strong> - @num.Author.BirthDate</li>
+        <li><strong>Location</strong> -  @num.Author.Location</li>
+        } *@
+    </ol>
+
+@{
+    int i = 0;
+
+}
+    @foreach (var num in Model.AuthorList)
+    {
+        
+        <p>Author @i++</p>
+    <p>
+        FirstName -  @num.FirstName
+        LastName - @num.LastName
+        BirthDate - @num.BirthDate
+        Location - @num.Location
+    </p>
+    }
+    
+    <a asp-action="Index" asp-controller="Book">Back</a>

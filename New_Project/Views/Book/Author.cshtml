@@ -1,0 +1,40 @@
+﻿@model Models.Models.BookAuthorMap
+
+<h3>Author</h3>
+
+<form asp-action="Author" asp-controller="Book" method="post">
+    <input type="hidden" asp-for="Book_Id" />
+
+
+    <ol>
+        <li asp-for="Title"><strong>Title</strong> - @Model.Book.Title</li>
+        <li asp-for="ISBN"><strong>ISBN</strong> - @Model.Book.ISBN</li>
+        <li asp-for="Price"><strong>Price</strong> - @Model.Book.Price</li>
+
+       @*  @if (Model.Author_Id != 0)
+        {
+            <li><strong>Author Id</strong> - @Model.Author_Id</li>
+
+        } *@
+        @* @foreach (var num in Model.BookAuthorMap)
+        {
+            <li><strong>FirstName</strong> - @num.Author.FirstName</li>
+            <li><strong>LastName</strong> -  @num.Author.LastName</li>
+            <li><strong>BirthDate</strong> - @num.Author.BirthDate</li>
+            <li><strong>Location</strong> -  @num.Author.Location</li>
+        } *@
+    </ol>
+
+
+    <select asp-for="Author_Id">
+        @foreach(var num in Model.Author)
+        {
+            <option value="@num.AuthorId">@num.FullName</option>
+        }
+    </select> 
+    <button type="submit" asp-action="Display" asp-controller="Book"> Add </button>
+    <button asp-action="Index" asp-controller="Book">Cancel</button>
+</form>
+
+
+

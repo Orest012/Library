@@ -1,0 +1,34 @@
+﻿@model Models.Models.Book
+
+
+@* <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Number of chapters</th>
+            <th>Number of pages</th>
+            <th>Weight</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Title</td>
+            <td>@Model.ISBN</td>
+            <td>@Model.BookDetail.NumberOfChapters</td>
+            <td>@Model.BookDetail.NumberOfPages</td>
+            <td>@Model.BookDetail.Weight</td>
+        </tr>
+    </tbody>
+
+</table> *@
+
+<ol>
+    <li><strong>Title</strong> - @Model.Title</li>
+    <li><strong>ISBN</strong> - @Model.ISBN</li>
+    <li><strong>Number of chapters</strong> - @Model.BookDetail.NumberOfPages</li>
+    <li><strong>Number of pages</strong> - @Model.BookDetail.NumberOfPages</li>
+    <li><strong>Weight</strong> -  @Model.BookDetail.Weight</li>
+</ol>
+

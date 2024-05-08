@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Models.Models.Publisher>
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 1000px;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    .pos {
+        display: flex;
+        text-align: center;
+    }
+
+    .edit_button {
+        color: white;
+        background-color: blue;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .add_button {
+        color: white;
+        background-color: green;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .delete_button {
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px;
+    }
+</style>
+
+<h3>Publisher</h3>
+<a asp-action="Create" asp-controller="Publisher" class="add_button"> Add</a>
+<table>
+    <thead>
+        <tr>
+            <th>Publisher Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var num in Model)
+        {
+            <tr>
+                <td>@num.Publisher_Id</td>
+                <td>@num.Name</td>
+                <td>@num.Location</td>
+                <td>
+                    <a class="edit_button" asp-action="Edit" asp-controller="Publisher" asp-route-Id="@num.Publisher_Id">Edit</a>
+
+                    <a class="delete_button" asp-controller="Publisher" asp-action="Delete" asp-route-Id="@num.Publisher_Id">Delete </a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
